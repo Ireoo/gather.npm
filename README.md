@@ -5,7 +5,15 @@
 使用方法：
 
 ```javascript
-var gather = require('igather').gather("http://baidu.com", function(err, res) {
+// html格式文本 自动转化成jquery对象，使用方法同jquery
+var gather = require('igather').html("http://baidu.com", function(err, $) {
+    // code...
+});
+```
+
+```javascript
+// json格式文本 自动转化成json格式数据
+var gather = require('igather').json("http://baidu.com", function(err, json) {
     // code...
 });
 ```

@@ -22,7 +22,7 @@ exports.html = function (url, callback) {
 
 exports.json = function (url, callback) {
     needle.get(url, function(err, res) {
-        var $ = JSON.parse(res.body);
-        callback(err, $);
+        var json = JSON.parse(res.body);
+        callback(err, json);
     });
 };
