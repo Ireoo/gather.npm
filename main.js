@@ -13,8 +13,16 @@ function jiexi(data) {
     return cheerio.load(data);
 }
 
-exports.gather = function (url, callback) {
+exports.html = function (url, callback) {
     needle.get(url, function(err, res) {
-        callback(err, res);
+        var $ = jiexi(res.body);
+        callback(err, $);
+    });
+};
+
+exports.json = function (url, callback) {
+    needle.get(url, function(err, res) {
+        var $ = JSON.parse(res.body);
+        callback(err, $);
     });
 };
