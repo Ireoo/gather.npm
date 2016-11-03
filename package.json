@@ -1,6 +1,6 @@
 {
-  "name": "gather.ireoo",
-  "description": "gather tool with nodejs",
+  "name": "igather",
+  "description": "igather is gather tool with nodejs",
   "version": "1.0.0",
   "author": {
     "name": "S2"
