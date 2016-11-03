@@ -1,4 +1,4 @@
-# Gather.Ireoo
+# iGather
 
 ## nodejs采集集成命令
 
