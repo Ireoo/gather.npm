@@ -15,14 +15,30 @@ function jiexi(data) {
 
 exports.html = function (url, callback) {
     needle.get(url, function(err, res) {
-        var $ = jiexi(res.body);
-        callback(err, $);
+        if(!err) {
+            try {
+                var $ = jiexi(res.body);
+                callback(null, $);
+            }catch (e) {
+                callback(e, null);
+            }
+        } else {
+            callback(err, null);
+        }
     });
 };
 
 exports.json = function (url, callback) {
     needle.get(url, function(err, res) {
-        var json = JSON.parse(res.body);
-        callback(err, json);
+        if(!err) {
+            try {
+                var json = JSON.parse(res.body);
+                callback(null, json);
+            }catch (e) {
+                callback(e, null);
+            }
+        } else {
+            callback(err, null);
+        }
     });
 };
