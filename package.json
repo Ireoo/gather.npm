@@ -1,7 +1,7 @@
 {
   "name": "igather",
   "description": "igather is gather tool with nodejs",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": {
     "name": "S2"
   },

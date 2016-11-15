@@ -5,8 +5,8 @@ var needle = require('needle'),
     cheerio = require('cheerio');
 
 needle.defaults({
-    open_timeout: 5000,
-    user_agent: 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0'
+    open_timeout: 60 * 1000,
+    user_agent: 'iGather.npm'
 });
 
 function jiexi(data) {
