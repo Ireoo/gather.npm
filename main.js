@@ -6,7 +6,7 @@ var needle = require('needle'),
 
 needle.defaults({
     open_timeout: 60 * 1000,
-    user_agent: 'iGather.npm'
+    user_agent: 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322)'
 });
 
 function jiexi(data) {
