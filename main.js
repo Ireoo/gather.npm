@@ -1,7 +1,7 @@
 /**
  * Created by ireoo on 16-11-3.
  */
-var needle  = require('needle'),
+var needle = require('needle'),
     cheerio = require('cheerio');
 
 needle.defaults({
@@ -13,32 +13,40 @@ function jiexi(data) {
     return cheerio.load(data);
 }
 
-exports.html = function (url, callback) {
-    needle.get(url, function(err, res) {
-        if(!err) {
-            try {
-                var $ = jiexi(res.body);
-                callback(null, $);
-            }catch (e) {
-                callback(e, null);
+exports.html = function(url, callback) {
+    try {
+        needle.get(url, function(err, res) {
+            if (!err) {
+                try {
+                    var $ = jiexi(res.body);
+                    callback(null, $);
+                } catch (e) {
+                    callback(e, null);
+                }
+            } else {
+                callback(err, null);
             }
-        } else {
-            callback(err, null);
-        }
-    });
+        });
+    } catch (e) {
+        callback(e, null);
+    }
 };
 
-exports.json = function (url, callback) {
-    needle.get(url, function(err, res) {
-        if(!err) {
-            try {
-                var json = JSON.parse(res.body);
-                callback(null, json);
-            }catch (e) {
-                callback(e, null);
+exports.json = function(url, callback) {
+    try {
+        needle.get(url, function(err, res) {
+            if (!err) {
+                try {
+                    var json = JSON.parse(res.body);
+                    callback(null, json);
+                } catch (e) {
+                    callback(e, null);
+                }
+            } else {
+                callback(err, null);
             }
-        } else {
-            callback(err, null);
-        }
-    });
+        });
+    } catch (e) {
+        callback(e, null);
+    }
 };
